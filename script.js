@@ -1,16 +1,14 @@
 var geojsonLayer; // Declaración global de geojsonLayer
 
 window.onload = function () {
-    // Inicializar el mapa
-    var map = L.map('my-map').setView([30.0, -115.0], 7);
-
-    // Cargar el mapa base
     var basemap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWFyb24xNW1hIiwiYSI6ImNseDlodWwwMDEyNWkyaXB6OWduMGg2bXYifQ.icWNvciR1eZCYtMAyYzkrw', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         id: 'mapbox/streets-v11'
-    }).addTo(map);
+    });
 
-    // Función para obtener el icono basado en el sector
+    var map = L.map('my-map').setView([30.0, -115.0], 7);
+    basemap.addTo(map);
+
     function getIcon(sector) {
         var iconUrl;
         switch (sector) {
@@ -38,7 +36,6 @@ window.onload = function () {
         });
     }
 
-    // Función para cargar GeoJSON
     function loadGeoJSON(filter = '') {
         if (geojsonLayer) {
             map.removeLayer(geojsonLayer);
