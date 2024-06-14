@@ -3,47 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Leaflet CSS desde el CDN específico -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <!-- Leaflet CSS desde CDN seguro -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="map-container">
         <div id="toggle-container">
-        <div id="info-text">
-        <p><b><center>NEARSHORING EN BAJA CALIFORNIA</center></b><br><br>
-Este mapa interactivo muestra las diversas actividades económicas en Baja California relacionadas con el nearshoring, según <u>la metodología desarrollada por el Instituto Mexicano para la Competitividad (IMCO): </u><br><br>
+            <div id="info-text">
+                <p>
+                    <b><center>NEARSHORING EN BAJA CALIFORNIA</center></b><br><br>
+                    Este mapa interactivo muestra las diversas actividades económicas en Baja California relacionadas con el nearshoring, según <u>la metodología desarrollada por el Instituto Mexicano para la Competitividad (IMCO):</u><br><br>
 
-<b>El nearshoring</b>, definido como la relocalización de cadenas productivas esenciales a países cercanos, ha ganado relevancia como una estrategia para lograr mayor resiliencia en las cadenas de suministro y producción a nivel global. Al separar las actividades económicas más ligadas al nearshoring del resto, es posible hacer un análisis más realista, que permite aproximarse a la medición del impacto de este fenómeno sobre la IED recibida en el país.<br><br>
+                    <b>El nearshoring</b>, definido como la relocalización de cadenas productivas esenciales a países cercanos, ha ganado relevancia como una estrategia para lograr mayor resiliencia en las cadenas de suministro y producción a nivel global. Al separar las actividades económicas más ligadas al nearshoring del resto, es posible hacer un análisis más realista, que permite aproximarse a la medición del impacto de este fenómeno sobre la IED recibida en el país.<br><br>
 
-<center><b>Selección y Criterios de Actividades</b></center>
+                    <center><b>Selección y Criterios de Actividades</b></center>
 
-—Se seleccionaron 57 ramas industriales, clasificadas a nivel de 4 dígitos en el SCIAN.
-Estas ramas están asociadas al nearshoring debido a su integración en cadenas de producción globales o su potencial futuro.<br><br>
+                    —Se seleccionaron 57 ramas industriales, clasificadas a nivel de 4 dígitos en el SCIAN. Estas ramas están asociadas al nearshoring debido a su integración en cadenas de producción globales o su potencial futuro.<br><br>
 
-—De las 57 ramas, 37 están integradas en cadenas globales de valor, esenciales para la producción y exportación de bienes y servicios, con un valor agregado de exportación mayor al 10% de su producción total en 2021.<br><br>
+                    —De las 57 ramas, 37 están integradas en cadenas globales de valor, esenciales para la producción y exportación de bienes y servicios, con un valor agregado de exportación mayor al 10% de su producción total en 2021.<br><br>
 
-—Se incluyeron 17 ramas con potencial para integrarse a nuevas cadenas productivas en Norteamérica.<br><br>
+                    —Se incluyeron 17 ramas con potencial para integrarse a nuevas cadenas productivas en Norteamérica.<br><br>
 
-—Se añadieron 3 ramas industriales adicionales debido a estímulos económicos en la región, aunque no estén actualmente en cadenas globales de valor.<br><br>
+                    —Se añadieron 3 ramas industriales adicionales debido a estímulos económicos en la región, aunque no estén actualmente en cadenas globales de valor.<br><br>
 
-<center><b>Objetivo del Mapa:</b></center>
+                    <center><b>Objetivo del Mapa:</b></center>
 
-Este mapa tiene como objetivo facilitar el análisis y la toma de decisiones sobre inversiones y desarrollo económico en Baja California. Al proporcionar una visualización clara y detallada de las actividades económicas más relacionadas con el nearshoring, los usuarios pueden identificar oportunidades y estrategias para aprovechar esta tendencia global. Con esta herramienta, se espera que empresas, inversionistas y policymakers puedan comprender mejor el impacto del nearshoring en Baja California y tomar decisiones informadas para impulsar el desarrollo económico en la región.<br><br>
+                    Este mapa tiene como objetivo facilitar el análisis y la toma de decisiones sobre inversiones y desarrollo económico en Baja California. Al proporcionar una visualización clara y detallada de las actividades económicas más relacionadas con el nearshoring, los usuarios pueden identificar oportunidades y estrategias para aprovechar esta tendencia global. Con esta herramienta, se espera que empresas, inversionistas y policymakers puedan comprender mejor el impacto del nearshoring en Baja California y tomar decisiones informadas para impulsar el desarrollo económico en la región.<br><br>
 
-<u><b>Nota:</b> El mapa global muestra actividades relacionadas con el nearshoring, pero se puede filtrar específicamente para actividades a nivel nacional según el IMCO.</u><br><br><br>
-        </p>
+                    <u><b>Nota:</b> El mapa global muestra actividades relacionadas con el nearshoring, pero se puede filtrar específicamente para actividades a nivel nacional según el IMCO.</u><br><br><br>
+                </p>
+            </div>
+            <label for="toggle-imco">Mostrar relación nacional</label>
+            <label class="switch">
+                <input type="checkbox" id="toggle-imco">
+                <span class="slider round"></span>
+            </label>
         </div>
-        <label for="toggle-imco">Mostrar relación nacional</label>
-        <label class="switch">
-            <input type="checkbox" id="toggle-imco">
-            <span class="slider round"></span>
-        </label>
-        </div>
-
-
-
 
         <div id="controls">
             <img src="icons/Frame 1.png" id="control-logo" alt="Logo">
@@ -80,8 +77,8 @@ Este mapa tiene como objetivo facilitar el análisis y la toma de decisiones sob
             <div class="map-legend">Secretaría de Economía e Innovación de Baja California. Dirección Estadística 2024. Elaborado con datos de INEGI.</div>
         </div>
     </div>
-    <!-- Leaflet JS desde el CDN específico -->
-    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <!-- Leaflet JS desde CDN seguro -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Tu script personalizado -->
