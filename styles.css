@@ -1,0 +1,179 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#map-container {
+  display: flex;
+  height: 100%;
+}
+.custom-div-icon {
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.map-legend {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #666;
+  z-index: 1000;
+  background: none;
+  text-align: center;
+  margin: 0;
+}
+
+#controls {
+  width: 280px;
+  background: #6f7271;
+  padding: 10px;
+  box-shadow: 10px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-align: left;
+  color: ghostwhite;
+  font-size: 10px;
+  overflow-y: auto;
+}
+
+#control-logo {
+  width: 25%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+#search-container {
+  margin-top: 10px; /* Ajusta el espacio superior si es necesario */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#search-box {
+  width: 90%; /* Ajusta el ancho para que se ajuste dentro del contenedor */
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Asegura que el padding y borde se incluyan en el ancho total */
+}
+
+#my-map {
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+}
+
+#consultar {
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px;
+  margin: 2px 0;
+  font-size: 10px;
+  font-weight: normal;
+  color: white;
+  background-color: #621132;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #3E1123;
+  color: #C18F4E;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: #C18F4E;
+}
+
+input[type="checkbox"] {
+  border: 2px solid #FFFFFF;
+  background-color: #C18F4E;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #621132;
+  border-color: #FFFFFF;
+}
+
+#controls h3 {
+  font-size: 14px;
+  margin: 10px 0 5px;
+  color: #fff;
+}
+/* Estilo para el contenedor del switch */
+#toggle-container {
+    position: absolute;
+    top: 20px;  /* Ajusta la posición desde arriba */
+    right: 20px; /* Posición a la derecha del mapa */
+    z-index: 1000; /* Asegura que esté por encima del mapa */
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+/* Estilo para el switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #C18F4E;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+#info-text {
+    font-size: 10px;
+    color: #333;
+    text-align: justify;
+}
